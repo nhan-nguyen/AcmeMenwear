@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <h2>Heading</h2>
                 <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" />
-                <div>@Html.ActionLink("Details", "Details", new { id = product.ProductId })</div>
+                <div>@Html.ActionLink("Details", "Details", "Products", new { id = product.ProductId }, null)</div>
             </div>
         }
     </div>
