@@ -15,8 +15,11 @@ namespace AcmeMenwear.Controllers
 
         public ActionResult Index()
         {
-            //HomepageViewModels viewModel = new HomepageViewModels();
-            return View(db.Slides.ToList());
+            HomepageViewModels viewModel = new HomepageViewModels();
+            viewModel.Products = db.Products.ToList();
+            viewModel.Slides = db.Slides.ToList();
+
+            return View(viewModel);
         }
 
         public ActionResult About()

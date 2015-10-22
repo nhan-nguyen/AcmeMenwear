@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AcmeMenwear.Models.Slide>
+﻿@*@model IEnumerable<AcmeMenwear.Models.Slide>*@
+@model HomepageViewModels
 
 @{
     ViewBag.Title = "Home Page";
@@ -8,13 +9,13 @@
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
 
-        @foreach (var item in Model)
+        @foreach (var slide in Model.Slides)
         {
             <div class="item active">
-                <img src="~/SlideImg?id=@Html.DisplayFor(modelItem => item.SlideId)" alt="">
+                <img src="~/SlideImg?id=@Html.DisplayFor(modelItem => slide.SlideId)" alt="">
                 <div class="container">
                     <div class="carousel-caption">
-                        <a class="btn btn-large btn-primary" href="@Html.DisplayFor(modelItem => item.SlideLink)">Learn more</a>
+                        <a class="btn btn-large btn-primary" href="@Html.DisplayFor(modelItem => slide.SlideLink)">Learn more</a>
                     </div>
                 </div>
             </div>
@@ -25,3 +26,17 @@
     <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 <!-- /.carousel -->
+
+<div class="container">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" />
+                <div>@Html.ActionLink("Details", "Details", new { id = product.ProductId })</div>
+            </div>
+        }
+    </div>
+</div>
