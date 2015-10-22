@@ -1,0 +1,43 @@
+﻿@model AcmeMenwear.Models.Slide
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slide</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.SlideImg.Any(f => f.FileType == FileType.Image))
+        {
+            <dt>
+                Slide Image Preview
+            </dt>
+            <dd>
+                <img src="~/SlideImg?id=@Model.SlideImg.First(f => f.FileType == FileType.Image).SlideImgId" alt="Slide Image" />
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.SlideLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlideLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlideDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlideDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SlideId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

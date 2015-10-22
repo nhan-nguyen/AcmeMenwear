@@ -12,5 +12,7 @@ namespace AcmeMenwear.DBContext
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+        public DbSet<SlideImg> SlideImg { get; set; }
     }
 }

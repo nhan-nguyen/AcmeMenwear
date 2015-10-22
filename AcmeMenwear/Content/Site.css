@@ -1,6 +1,5 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,67 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Slide banner style */
+.carousel {
+    margin-bottom: 60px;
+}
+
+    .carousel .container {
+        position: relative;
+        z-index: 10;
+    }
+
+.carousel-control {
+    height: 200px;
+    margin-top: 150px;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    /*background-color: transparent;*/
+    border: 0;
+}
+
+.carousel .item {
+    height: 500px;
+}
+
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+.carousel-caption {
+    background-color: transparent;
+    position: static;
+    padding: 0 20px;
+    margin-top: 200px;
+}
+
+    .carousel-caption h1,
+    .carousel-caption .lead {
+        margin: 0;
+        line-height: 1.25;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+
+    .carousel-caption .btn {
+        margin-top: 10px;
+    }
+
+
+/* footer */
+
+footer {
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.navbar-text > a {
+    color: inherit;
+    text-decoration: none;
 }

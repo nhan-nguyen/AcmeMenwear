@@ -174,17 +174,35 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SlideImgController.cs" />
+    <Compile Include="Controllers\SlidesController.cs" />
     <Compile Include="DBContext\AMContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510201532266_InitialCreate.cs" />
+    <Compile Include="Migrations\201510201532266_InitialCreate.Designer.cs">
+      <DependentUpon>201510201532266_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510210954162_Slides.cs" />
+    <Compile Include="Migrations\201510210954162_Slides.Designer.cs">
+      <DependentUpon>201510210954162_Slides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510211000065_SlideImg.cs" />
+    <Compile Include="Migrations\201510211000065_SlideImg.Designer.cs">
+      <DependentUpon>201510211000065_SlideImg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\HomepageViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Slide.cs" />
+    <Compile Include="Models\SlideImg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -198,6 +216,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -206,9 +225,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Custom\owl.carousel.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="tests\browser-icon-chrome.png" />
+    <Content Include="tests\slide-01.jpg" />
+    <Content Include="tests\slide-02.jpg" />
+    <Content Include="tests\slide-03.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,10 +278,16 @@
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Slides\Create.cshtml" />
+    <Content Include="Views\Slides\Delete.cshtml" />
+    <Content Include="Views\Slides\Details.cshtml" />
+    <Content Include="Views\Slides\Edit.cshtml" />
+    <Content Include="Views\Slides\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\File\" />
+    <Folder Include="Views\SlideImg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -266,6 +296,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510201532266_InitialCreate.resx">
+      <DependentUpon>201510201532266_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510210954162_Slides.resx">
+      <DependentUpon>201510210954162_Slides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211000065_SlideImg.resx">
+      <DependentUpon>201510211000065_SlideImg.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

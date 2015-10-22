@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - ACME Menwear</title>
+    @*<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">*@
+
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/custom")
 
 </head>
 <body>
@@ -17,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ACME Menwear", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -26,18 +30,29 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Slides", "Index", "Slides")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+
+    <!-- Body Content -->
+    @RenderBody()
+    <!-- /Body Content -->
+
+    <footer>
+        <div class="container">
+            <div class="navbar-text pull-left">
+                <p>© 2015 ACME Menwear</p>
+            </div>
+            <div class="navbar-text pull-right">
+                <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

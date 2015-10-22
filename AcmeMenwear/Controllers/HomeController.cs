@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AcmeMenwear.Models;
+using AcmeMenwear.DBContext;
+
 
 namespace AcmeMenwear.Controllers
 {
     public class HomeController : Controller
     {
+        private AMContext db = new AMContext();
+
         public ActionResult Index()
         {
-            return View();
+            //HomepageViewModels viewModel = new HomepageViewModels();
+            return View(db.Slides.ToList());
         }
 
         public ActionResult About()
