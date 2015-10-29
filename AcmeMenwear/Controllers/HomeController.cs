@@ -16,7 +16,10 @@ namespace AcmeMenwear.Controllers
         public ActionResult Index()
         {
             HomepageViewModels viewModel = new HomepageViewModels();
-            viewModel.Products = db.Products.ToList();
+
+            var lastProds = db.Products.OrderByDescending(p => p.ProductId).Take(3);
+            viewModel.Products = lastProds;
+
             viewModel.Slides = db.Slides.ToList();
 
             return View(viewModel);

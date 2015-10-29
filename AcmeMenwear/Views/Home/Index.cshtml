@@ -6,37 +6,29 @@
 }
 
 <!-- .carousel -->
-<div id="myCarousel" class="carousel slide">
-    <div class="carousel-inner">
-
-        @foreach (var slide in Model.Slides)
-        {
-            <div class="item active">
-                <img src="~/SlideImg?id=@Html.DisplayFor(modelItem => slide.SlideId)" alt="">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <a class="btn btn-large btn-primary" href="@Html.DisplayFor(modelItem => slide.SlideLink)">Learn more</a>
-                    </div>
-                </div>
-            </div>
-        }
-
-    </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+<div id="banner" class="owl-carousel owl-theme">
+    @foreach (var slide in Model.Slides)
+    {
+        <a class="banner-link" href="@Html.DisplayFor(modelItem => slide.SlideLink)">
+            <div class="item"><img src="~/SlideImg?id=@Html.DisplayFor(modelItem => slide.SlideId)" alt=""></div>
+        </a>
+    }
 </div>
+
 <!-- /.carousel -->
 
-<div class="container">
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-        @foreach (var product in Model.Products)
-        {
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" />
-                <div>@Html.ActionLink("Details", "Details", "Products", new { id = product.ProductId }, null)</div>
-            </div>
-        }
-    </div>
+<h2>Latest Arrivals - New Trend</h2>
+<hr />
+
+<!-- Three columns of text below the carousel -->
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" style="width:360px; height:240px" />
+            <div>@Html.ActionLink("Details", "Details", "Products", new { id = product.ProductId }, null)</div>
+        </div>
+    }
 </div>
+

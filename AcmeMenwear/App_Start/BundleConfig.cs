@@ -20,8 +20,8 @@ namespace AcmeMenwear
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                        "~/Scripts/Custom/custom.js",
-                        "~/Scripts/Custom/owl.carousel.min.js"));
+                        "~/Scripts/owl.carousel.js",
+                        "~/Scripts/custom.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
@@ -29,7 +29,9 @@ namespace AcmeMenwear
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",
-                        "~/Content/site.css"));
+                        "~/Content/owl.carousel.css",
+                        "~/Content/owl.theme.css",
+                        "~/Content/Site.css"));
         }
     }
 }
