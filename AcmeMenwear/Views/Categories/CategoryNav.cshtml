@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AcmeMenwear.Models.Category>
+
+<li>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Catalog<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li>@Html.ActionLink("All", "Catalog", "Products")</li>
+        <li role="separator" class="divider"></li>
+        <li class="dropdown-header">Category</li>
+        @foreach (var cat in Model)
+        {
+            <li>
+                <a class="category-nav" href="@Url.Action("Catalog", "Products", new { id = cat.CategoryId })">
+                    @cat.CategoryName
+                </a>
+            </li>
+        }
+    </ul>
+</li>

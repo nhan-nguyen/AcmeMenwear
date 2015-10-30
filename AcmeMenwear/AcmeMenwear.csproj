@@ -291,6 +291,8 @@
     <Content Include="Views\Slides\Edit.cshtml" />
     <Content Include="Views\Slides\Index.cshtml" />
     <Content Include="Views\Products\Catalog.cshtml" />
+    <Content Include="Views\Categories\Sidebar.cshtml" />
+    <Content Include="Views\Categories\CategoryNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

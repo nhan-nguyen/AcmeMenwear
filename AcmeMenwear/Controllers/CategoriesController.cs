@@ -21,6 +21,11 @@ namespace AcmeMenwear.Controllers
             return View(db.Categories.ToList());
         }
 
+        public PartialViewResult CategoryNav()
+        {
+            return PartialView(db.Categories.ToList());
+        }
+
         // GET: Categories/Details/5
         public ActionResult Details(int? id)
         {

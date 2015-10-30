@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - ACME Menwear</title>
-    @*<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">*@
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     @Styles.Render("~/Content/css")
@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -31,16 +30,17 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Catalog<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("All", "Catalog", "Products")</li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Category</li>
-                            <li>@Html.ActionLink("Shirt", "Catalog", "Products", new { id = 1 }, null)</li>
-                            <li>@Html.ActionLink("Jeans", "Catalog", "Products", new { id = 2 }, null)</li>
-                        </ul>
-                    </li>
+                    @*<li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Catalog<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("All", "Catalog", "Products")</li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Category</li>
+                                <li>@Html.ActionLink("Shirt", "Catalog", "Products", new { id = 1 }, null)</li>
+                                <li>@Html.ActionLink("Jeans", "Catalog", "Products", new { id = 2 }, null)</li>
+                            </ul>
+                        </li>*@
+                    @{Html.RenderAction("CategoryNav", "Categories");}
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Slides", "Index", "Slides")</li>
                 </ul>
