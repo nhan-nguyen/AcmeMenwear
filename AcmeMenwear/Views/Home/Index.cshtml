@@ -10,7 +10,9 @@
     @foreach (var slide in Model.Slides)
     {
         <a class="banner-link" href="@Html.DisplayFor(modelItem => slide.SlideLink)">
-            <div class="item"><img src="~/SlideImg?id=@Html.DisplayFor(modelItem => slide.SlideId)" alt=""></div>
+            <div class="item">
+                <img src="~/SlideImg?id=@slide.SlideImg.First(f => f.FileType == FileType.Image).SlideImgId" alt="">
+            </div>
         </a>
     }
 </div>
@@ -20,14 +22,13 @@
 <h2>Latest Arrivals</h2>
 <hr />
 
-<!-- Three columns of text below the carousel -->
 <div class="row">
-    @foreach (var product in Model.Products)
+    @foreach (var item in Model.Products)
     {
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" style="width:360px; height:240px" />
-            <div>@Html.ActionLink("Details", "Details", "Products", new { id = product.ProductId }, null)</div>
+            <h2>@Html.DisplayFor(modelItem => item.ProductTitle)</h2>
+            <img src="~/File?id=@item.Files.First(f => f.FileType == FileType.Image).FileId" alt="Product Image" style="width:360px;height:240px" />
+            <div>@Html.ActionLink("Details", "Details", "Products", new { id = item.ProductId }, null)</div>
         </div>
     }
 </div>

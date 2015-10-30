@@ -13,7 +13,8 @@
         <div class="product-img">
         </div>
         <a href="#">
-            <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" style="width:540px; height:300px" />
+            <img src="~/File?id=@product.Files.First(f => f.FileType == FileType.Image).FileId" alt="Product Image" style="width:540px;height:300px" />
+
         </a>
 
         <h3>@Html.DisplayFor(modelItem => product.ProductTitle)</h3>
