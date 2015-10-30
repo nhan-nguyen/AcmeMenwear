@@ -12,7 +12,8 @@
 
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+
+    <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,7 +22,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @*@Html.ActionLink("ACME Menwear", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <a class="navbar-brand icon" href="#">
+                <a class="navbar-brand icon" href="@Url.Action("Index", "Home", null)">
                     <img src="../../Images/ACME_logo.png" style="width: 150px;">
                 </a>
             </div>
@@ -30,7 +31,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Catalog", "Index", "Products")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Slides", "Index", "Slides")</li>
                 </ul>
@@ -39,28 +40,30 @@
         </div>
     </div>
 
-    <!-- Body Content -->
-    <div class="container">
-        @RenderBody()
-    </div>
-    <!-- /Body Content -->
-
-    <footer>
+    <div id="wrap">
+        <!-- Body Content -->
         <div class="container">
-            <div class="navbar-text pull-left">
-                <p>© 2015 ACME Menwear</p>
-            </div>
-            <div class="navbar-text pull-right">
-                <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-            </div>
+            @RenderBody()
         </div>
-    </footer>
+        <!-- /Body Content -->
+        <div id="push"></div>
+    </div>
+        <footer id="footer">
+            <div class="container">
+                <div class="navbar-text pull-left">
+                    <p>© 2015 ACME Menwear</p>
+                </div>
+                <div class="navbar-text pull-right">
+                    <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                </div>
+            </div>
+        </footer>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/custom")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/custom")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

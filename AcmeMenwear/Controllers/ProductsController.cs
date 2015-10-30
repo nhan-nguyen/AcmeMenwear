@@ -17,11 +17,32 @@ namespace AcmeMenwear.Controllers
         private AMContext db = new AMContext();
 
         // GET: Products
+        //[Authorize]
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Category);
             return View(products.ToList());
         }
+
+        public ActionResult Catalog(int? id)
+        {
+            if (id == null)
+            {
+                var products = db.Products.Include(p => p.Category);
+                return View(products.ToList());
+            }
+            else
+            {
+                var products = db.Products.Where(p => p.Category.CategoryId == id);
+                return View(products.ToList());
+            }
+        }
+
+        //public ActionResult CatalogByCategory(int? id)
+        //{
+        //    var prodByCats = db.Products.Where(p => p.Category.CategoryId == id);
+        //    return View(prodByCats.ToList());
+        //}
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

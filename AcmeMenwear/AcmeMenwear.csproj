@@ -201,12 +201,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductViewModels.cs" />
     <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\SlideImg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jasny-bootstrap.css" />
     <Content Include="Images\ACME_fav.png" />
     <Content Include="Images\ACME_logo.png" />
     <Content Include="Content\bootstrap.css" />
@@ -221,6 +223,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\jasny-bootstrap.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -287,10 +290,10 @@
     <Content Include="Views\Slides\Details.cshtml" />
     <Content Include="Views\Slides\Edit.cshtml" />
     <Content Include="Views\Slides\Index.cshtml" />
+    <Content Include="Views\Products\Catalog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Custom\" />
     <Folder Include="Views\File\" />
     <Folder Include="Views\SlideImg\" />
   </ItemGroup>

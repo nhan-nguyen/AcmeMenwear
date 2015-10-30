@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AcmeMenwear.Models.Product>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog</h2>
+
+
+@foreach (var product in Model)
+{
+    <div class="col-md-6 portfolio-item">
+        <div class="product-img">
+        </div>
+        <a href="#">
+            <img src="~/File?id=@Html.DisplayFor(modelItem => product.ProductId)" alt="Product Image" style="width:540px; height:300px" />
+        </a>
+
+        <h3>@Html.DisplayFor(modelItem => product.ProductTitle)</h3>
+
+        <div class="product-price">
+            @Html.DisplayFor(modelItem => product.ProductPrice)
+        </div>
+
+        <p>@Html.DisplayFor(modelItem => product.ProductDescription)</p>
+
+        <div class="product-learnmore btn btn-primary">
+            @Html.ActionLink("Details", "Details", new { id = product.ProductId })
+        </div>
+    </div>
+}
+
+
+
