@@ -11,6 +11,7 @@ using AcmeMenwear.Models;
 
 namespace AcmeMenwear.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private AMContext db = new AMContext();

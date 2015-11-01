@@ -30,19 +30,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @*<li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Catalog<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("All", "Catalog", "Products")</li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Category</li>
-                                <li>@Html.ActionLink("Shirt", "Catalog", "Products", new { id = 1 }, null)</li>
-                                <li>@Html.ActionLink("Jeans", "Catalog", "Products", new { id = 2 }, null)</li>
-                            </ul>
-                        </li>*@
                     @{Html.RenderAction("CategoryNav", "Categories");}
-                    <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
-                    <li>@Html.ActionLink("Slides", "Index", "Slides")</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Admin Control Panel", "Index", "Admin")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

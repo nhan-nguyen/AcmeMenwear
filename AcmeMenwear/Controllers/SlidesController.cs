@@ -38,6 +38,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // GET: Slides/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -84,6 +85,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // GET: Slides/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -103,6 +105,7 @@ namespace AcmeMenwear.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "SlideId,SlideLink,SlideDescription")] Slide slide)
         {
             if (ModelState.IsValid)
@@ -115,6 +118,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // GET: Slides/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -130,6 +134,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // POST: Slides/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

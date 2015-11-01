@@ -17,13 +17,14 @@ namespace AcmeMenwear.Controllers
         private AMContext db = new AMContext();
 
         // GET: Products
-        //[Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Category);
             return View(products.ToList());
         }
 
+        [AllowAnonymous]
         public ActionResult Catalog(int? id)
         {
             if (id == null)
@@ -45,6 +46,7 @@ namespace AcmeMenwear.Controllers
         //}
 
         // GET: Products/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -71,6 +73,7 @@ namespace AcmeMenwear.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ProductId,ProductTitle,ProductDescription,ProductPrice,CategoryId")] Product product, HttpPostedFileBase upload)
         {
             try {
@@ -104,6 +107,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -124,6 +128,7 @@ namespace AcmeMenwear.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult EditPost(int? id, HttpPostedFileBase upload)
         {
             if (id == null)
@@ -168,6 +173,7 @@ namespace AcmeMenwear.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -185,6 +191,7 @@ namespace AcmeMenwear.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
