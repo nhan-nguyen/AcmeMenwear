@@ -11,7 +11,7 @@
     {
         <a class="banner-link" href="@Html.DisplayFor(modelItem => slide.SlideLink)">
             <div class="item">
-                <img src="~/SlideImg?id=@slide.SlideImg.First(f => f.FileType == FileType.Image).SlideImgId" alt="">
+                <img src="~/SlideImg?id=@slide.SlideImg.FirstOrDefault(f => f.FileType == FileType.Image).SlideImgId" alt="">
             </div>
         </a>
     }
@@ -27,7 +27,7 @@
     {
         <div class="col-md-4">
             <h2>@Html.DisplayFor(modelItem => item.ProductTitle)</h2>
-            <img src="~/File?id=@item.Files.First(f => f.FileType == FileType.Image).FileId" alt="Product Image" style="width:360px;height:240px" />
+            <img src="~/File?id=@item.Files.FirstOrDefault(f => f.FileType == FileType.Image).FileId" alt="Product Image" style="width:360px;height:240px" />
             <div>@Html.ActionLink("Details", "Details", "Products", new { id = item.ProductId }, null)</div>
         </div>
     }
